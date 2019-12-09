@@ -1,0 +1,26 @@
+{
+  "name": "gabrielelana/bowling-game-kata",
+  "description": "Bowling Game Kata in PHP",
+  "type": "project",
+  "minimum-stability": "dev",
+  "require-dev": {
+    "phpunit/phpunit": "^8.5",
+    "phpstan/phpstan": "^0.12.2",
+    "gabrielelana/spaceland": "dev-master"
+  },
+  "authors": [
+    {
+      "name": "gabriele.lana",
+      "email": "gabriele.lana@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "": [
+        "./src",
+        "./tests"
+      ]
+    }
+  },
+  "require": {}
+}
