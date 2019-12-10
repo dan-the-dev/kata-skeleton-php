@@ -2,8 +2,6 @@
 
 namespace Bowling;
 
-use Exception;
-
 class Game
 {
     const STRIKE_SPARE_BASE_POINTS = 10;
@@ -31,7 +29,7 @@ class Game
     protected function getRollScore(int $pos, string $roll): int
     {
         if ($roll === 'X') {
-            return $this->getStrikeScore($pos, $roll);
+            return $this->getStrikeScore($pos);
         }
         if (strpos($roll, '/') !== FALSE) {
             return $this->getSpareScore($pos, $roll);
@@ -48,7 +46,7 @@ class Game
         return $this->getSimpleScore($roll);
     }
 
-    protected function getStrikeScore(int $pos, string $roll): int
+    protected function getStrikeScore(int $pos): int
     {
         $score = self::STRIKE_SPARE_BASE_POINTS + $this->getNextRollScore($pos + 1) + $this->getNextRollScore($pos + 2);
         return $score;
@@ -61,7 +59,7 @@ class Game
         if ($lastIsPoint) {
             return self::STRIKE_SPARE_BASE_POINTS + intval($last);
         } else {
-            return self::STRIKE_SPARE_BASE_POINTS + $this->getFirstThrowScore($roll);
+            return self::STRIKE_SPARE_BASE_POINTS + $this->getFirstThrowScore($this->rolls[$pos + 1]);
         }
     }
 
@@ -82,13 +80,13 @@ class Game
         return $this->getThrowScore($points[1]);
     }
 
-    protected function getThrowScore(string $point): int
-    {
-        return $point === '-' ? 0 : intval($point);
-    }
-
     protected function getRollPoints(string $roll): array
     {
         return str_split($roll);
+    }
+
+    protected function getThrowScore(string $point): int
+    {
+        return $point === '-' ? 0 : intval($point);
     }
 }

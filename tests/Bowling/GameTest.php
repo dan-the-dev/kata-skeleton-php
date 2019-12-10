@@ -12,19 +12,6 @@ class GameTest extends TestCase
         $this->game = new Game();
     }
 
-    protected function getRollsArray(string $rolls): array
-    {
-        return explode(' ', $rolls);
-    }
-
-    protected function executeRolls(string $rolls): void
-    {
-        $rollsArray = $this->getRollsArray($rolls);
-        foreach ($rollsArray as $roll) {
-            $this->game->roll($roll);
-        }
-    }
-
     public function testShallPass(): void
     {
         $this->assertEquals(1, 1);
@@ -52,5 +39,21 @@ class GameTest extends TestCase
         $this->executeRolls($rolls);
 
         $this->assertEquals(150, $this->game->score());
+    }
+
+    /**
+     * Utility functions
+     */
+    protected function getRollsArray(string $rolls): array
+    {
+        return explode(' ', $rolls);
+    }
+
+    protected function executeRolls(string $rolls): void
+    {
+        $rollsArray = $this->getRollsArray($rolls);
+        foreach ($rollsArray as $roll) {
+            $this->game->roll($roll);
+        }
     }
 }
