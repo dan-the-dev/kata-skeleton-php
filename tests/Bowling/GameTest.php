@@ -35,7 +35,7 @@ class GameTest extends TestCase
         $rolls = "X X X X X X X X X X X X";
         $this->executeRolls($rolls);
 
-        $this->assertEquals($this->game->score(), 300);
+        $this->assertEquals(300, $this->game->score());
     }
 
     public function test10Pairs(): void
@@ -43,7 +43,7 @@ class GameTest extends TestCase
         $rolls = "9- 9- 9- 9- 9- 9- 9- 9- 9- 9-";
         $this->executeRolls($rolls);
 
-        $this->assertEquals($this->game->score(), 90);
+        $this->assertEquals(90, $this->game->score());
     }
 
     public function test5Spare(): void
@@ -51,6 +51,6 @@ class GameTest extends TestCase
         $rolls = "5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/5";
         $this->executeRolls($rolls);
 
-        $this->assertEquals($this->game->score(), 150);
+        $this->assertEquals(150, $this->game->score());
     }
 }
