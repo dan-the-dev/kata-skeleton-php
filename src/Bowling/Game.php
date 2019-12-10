@@ -1,17 +1,18 @@
 <?php
+
 namespace Bowling;
 
 use Exception;
 
 class Game
 {
-    public function roll(int $pins): void
+    public function roll(string $pins): void
     {
-        throw new Exception("Not Yet Implemented");
+        $a = 1;
     }
 
     public function score(): int
     {
-        throw new Exception("Not Yet Implemented");
+        return 0;
     }
 }
