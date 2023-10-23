@@ -1,4 +1,4 @@
-.PHONY: test
+.PHONY: install test
 
 install:
 	docker-compose run main composer install
