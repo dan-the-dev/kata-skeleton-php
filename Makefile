@@ -1,4 +1,7 @@
 .PHONY: test
 
-test: 
-	vendor/phpunit/phpunit/phpunit
+install:
+	docker-compose run main composer install
+
+test:
+	docker-compose run main vendor/phpunit/phpunit/phpunit

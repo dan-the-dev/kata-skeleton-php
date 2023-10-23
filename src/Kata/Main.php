@@ -2,7 +2,7 @@
 
 namespace Kata;
 
-class Index
+class Main
 {
     public function handle(): bool
     {
