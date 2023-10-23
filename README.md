@@ -3,7 +3,7 @@
 ## How to use the template
 
 Create your own repository starting from the template here on GitHub - give a name meaningful for the Kata exercise.
-The only requirement on your computer are: 
+The only requirements on your computer are: 
 - [Make](https://www.gnu.org/software/make/)
 - [Docker](https://www.docker.com/)
 
